@@ -1,38 +1,25 @@
-var student1= {
-    name : "Prottoy",
-    age : 23,
-    cgpa : 2.56,
-    language : ["Bangla","English","Hindi"]
-}
 
-var student2={
-    name : "Mehedi",
-    age : 24,
-    chpa : 2.53,
-    language : ["Bangla","Portuguese","Urdu"]
-}
 
-document.write(student1.name);
+var numOfwon=0;
+var numOflost=0;
 
-function student(name,age,cgpa,lang){
-this.name=name;
-this.age=age;
-this.cgpa=cgpa;
-this.lang=lang;
+ for(var i=0;i<5;i++){
 
-this.display=function(){
-    document.write(this.name +"<br>");
-    document.write(this.age+"<br>");
-    document.write(this.cgpa+"<br>");
-    document.write(this.lang+"<br>");
-}
+    var guessNumber=parseInt(prompt("Enter a number between 1 to 5 : "));
 
-}
-document.write("<br>");
-var student3=new student("Sakib",21,1.65,["Bangla","Chinese","Japanese"]);
-var student4=new student("Momin",25,2.75,["Bangla","English","Japanese"]);
-var student5=new student("Rakib",27,2.61,["Bangla","Chinese","Korean"]);
+    var randomNumber=Math.floor(Math.random()*5)+1;
 
-document.write(student3.cgpa + "<br>");
+    if(guessNumber==randomNumber){
+        console.log("You have won");
+        numOfwon++;
+    }
+    else {
+        console.log("You have lost. Random number was : "+randomNumber);
+        numOflost++;
+    }
 
-student5.display();
+ }
+
+ document.write("Total number of won is : "+numOfwon+"<br> ");
+ document.write("Total number of lost is : "+numOflost);
+
